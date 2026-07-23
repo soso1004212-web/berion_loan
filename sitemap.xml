@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.xn--ez-2j9i.kr/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.xn--ez-2j9i.kr/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/faq.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/company.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/loan-process.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/required-documents.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/interest-rate.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/credit-score.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/repayment.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.xn--ez-2j9i.kr/guide/safe-loan-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
