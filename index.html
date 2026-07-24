@@ -57,6 +57,10 @@ body{padding-bottom:112px}.fixed-inquiry .wrap{grid-template-columns:1.45fr 3.55
 
 /* 맞춤상품 카드 */
 .product-zone{background:#fff}.custom-products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.custom-product{min-height:270px;background:#f3f5f8;border:1px solid #edf0f4;border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 120px;gap:14px;align-items:center;overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.custom-product:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#d7e0ed}.cp-copy h3{margin:0 0 16px;color:#2854c5;font-size:23px;letter-spacing:-.7px}.cp-copy dl{margin:0}.cp-copy dl>div{display:grid;grid-template-columns:52px 1fr;gap:6px;margin:10px 0;font-size:15px}.cp-copy dt{color:#2854c5;font-weight:900}.cp-copy dd{margin:0;color:#404958;white-space:nowrap}.cp-btn{margin-top:16px;border:1px solid #9da9ba;background:#fff;color:#667386;border-radius:999px;padding:9px 22px;cursor:pointer;font-weight:800;transition:.2s}.cp-btn:hover{background:#2854c5;color:#fff;border-color:#2854c5}.cp-art{font-size:66px;text-align:center;filter:saturate(.85);transform:translateY(5px)}.product-caution{margin-top:20px;border-radius:13px;background:#f8fafc;border:1px solid #e6ebf2;padding:15px 18px;color:#68768b;font-size:13px;text-align:center}@media(max-width:1000px){.custom-products{grid-template-columns:repeat(2,1fr)}}@media(max-width:680px){.custom-products{grid-template-columns:1fr}.custom-product{grid-template-columns:1fr 95px;padding:22px;min-height:230px}.cp-art{font-size:52px}.cp-copy h3{font-size:21px}}
+
+/* SEO 통합 영역 표시 안전장치 */
+#guide{opacity:1!important;transform:none!important;visibility:visible!important}
+
 </style>
 </head>
 <body><a class="skip-link" href="#mainContent">본문 바로가기</a>
@@ -84,7 +88,7 @@ body{padding-bottom:112px}.fixed-inquiry .wrap{grid-template-columns:1.45fr 3.55
 </div><div class="product-caution">대출금리와 한도는 고객의 신용도 및 심사 결과에 따라 달라질 수 있으며, 대출 실행 전 상품설명서와 약관을 반드시 확인하시기 바랍니다.</div></div></section>
 <section class="section gray reveal" id="process"><div class="wrap"><div class="section-head"><span>PROCESS</span><h2>간편한 이용절차</h2><p>상담 접수부터 계약까지 단계별로 안내합니다.</p></div><div class="steps"><div class="step"><div class="num">STEP 01</div><h3>상담 신청</h3><p>이름, 연락처와 희망금액을 입력합니다.</p></div><div class="step"><div class="num">STEP 02</div><h3>상담 내용 확인</h3><p>접수한 내용을 바탕으로 필요한 사항을 확인합니다.</p></div><div class="step"><div class="num">STEP 03</div><h3>심사 및 안내</h3><p>필요서류와 대출 가능 조건을 안내합니다.</p></div><div class="step"><div class="num">STEP 04</div><h3>계약 진행</h3><p>계약 내용을 확인한 뒤 본인 동의로 진행합니다.</p></div></div></div></section>
 <section class="section reveal" id="safety"><div class="wrap"><div class="section-head"><span>SAFE FINANCE</span><h2>안심하고 이용하세요</h2></div><div class="trust"><div class="trust-card"><h3>선입금·불법 수수료를 요구하지 않습니다</h3><p>대출 진행을 이유로 공탁금, 보증료, 작업비, 통장 또는 체크카드를 요구하지 않습니다. 의심스러운 요청을 받은 경우 즉시 상담을 중단해 주세요.</p></div><div class="trust-card light"><h3>대출 조건을 충분히 확인하세요</h3><p>대출계약 전 금리, 연체금리, 상환기간, 총 상환금액을 확인해야 합니다. 고객의 상환능력에 비해 과도한 대출은 신용평점 하락의 원인이 될 수 있습니다.</p></div></div><div class="notice" style="margin-top:22px"><strong>필수 안내</strong><br>대출금리 및 한도는 고객의 신용도, 소득, 기존 부채와 심사 결과에 따라 차등 적용됩니다. 대출 취급 시 발생하는 모든 조건은 계약서 및 상품설명서를 통해 안내됩니다. 베리온대부는 법정 최고금리를 초과하는 이자를 받지 않습니다.</div></div></section>
-<section class="section gray reveal" id="guide">
+<section class="section gray visible" id="guide">
 <div class="wrap">
 <div class="section-head">
 <span>FINANCIAL GUIDE</span>
@@ -139,7 +143,12 @@ function hideFixedInquiry(){document.getElementById('fixedInquiry').style.displa
 function showFixedInquiry(){document.getElementById('fixedInquiry').style.display='block';document.getElementById('fixedOpen').style.display='none';document.body.style.paddingBottom=window.innerWidth<=680?'190px':'112px'}
 function openPrivacy(){document.getElementById('privacyModal').classList.add('open')}function closePrivacy(){document.getElementById('privacyModal').classList.remove('open')}
 
-const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}})},{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+try{
+const revealObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}})},{threshold:.05});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+}catch(e){
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+}
 document.getElementById('quickPhone')?.addEventListener('input',e=>{let n=e.target.value.replace(/\D/g,'').slice(0,11);if(n.length>7)e.target.value=n.replace(/(\d{3})(\d{4})(\d+)/,'$1-$2-$3');else if(n.length>3)e.target.value=n.replace(/(\d{3})(\d+)/,'$1-$2');else e.target.value=n});
 </script>
 <script>
